@@ -40,3 +40,26 @@ def index(request):
     "products": d,
     "hello": "Barev"
   })
+
+
+def product(request):
+  product = [{
+    "id": 1,
+    "name": "MacBook ipsum dolor sit amet consectetur.",
+    "price": 2560,
+    "count": 12,
+    "image": "hp.webp",
+    "categories": ["Electronics", "Computers", "Tools"],
+    "availability": "In stock",
+    "brand": "ASUS",
+    "screen_size": 14,
+    "screen_type": "TN",
+    "resolution": {"width": 1366, "height": 768},
+    "processor": "Intel Core",
+    "cpu": "Intel Celeron N4020",
+    "processor_cache": 8
+  }]
+  
+  return render(request, 'shop/product.html', {
+    "products": product
+  })

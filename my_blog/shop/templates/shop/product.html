@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esim inch - Online shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="/media/style.css">
+</head>
+<body>
+  
+  <header class="shop_header">
+    <div class="shop_logo">
+      <a href="./index.html">
+        <img src="/media/images/logo.png" alt="test">
+      </a>
+    </div>
+
+    <div class="shop_search">
+      <form method="GET" action="/">
+        <input type="search" placeholder="Search..." class="s_input" />
+        <input type="submit" value="Search" class="s_btn" />
+      </form>
+    </div>
+
+    <nav class="shop_nav">
+      <ul class="shop_main_menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+
+      <ul class="shop_user_box">
+        <li>
+          <a href="login.html">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          </a>
+        </li>
+        <li>
+          <a href="register.html">
+            <i class="fa-solid fa-users"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="clearfix"></div>
+    </nav>
+
+    <div class="clearfix"></div>
+  </header>
+
+  <section class="product">
+    {% for product in products %}
+      <div class="container">
+        <div class="product-image">
+          <img src="/media/images/hp.webp" alt="">
+
+          <div class="cart-price product-price">
+            Price: <span>${{product.price}}</span> |
+            Count: <span>{{product.count}}</span>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="product-actions">
+            <form>
+              <label>
+                Count: <input type="number" name="count" class="product-cnt" />
+              </label>
+              <input type="submit" value="Add Product" class="product-add" />
+            </form>
+          </div>
+        </div>
+
+        <div class="product-info">
+          <h1>{{product.name}}</h1>
+
+          <table>
+            <tbody>
+              <tr>
+                <th class="product-info-name">Availability</th>
+                <td class="product-info-value">{{product.availability}}</td>
+              </tr>
+              <tr>
+                <th class="product-info-name">Brand</th>
+                <td class="product-info-value">{{product.brand}}</td>
+              </tr>
+              <tr>
+                <th class="product-info-name">Screen size</th>
+                <td class="product-info-value">{{product.screen_size}} "</td>
+              </tr>
+              <tr>
+                <th class="product-info-name">Screen Type</th>
+                <td class="product-info-value">{{product.screen_type}}</td>
+              </tr>
+              <tr>
+                <th class="product-info-name">Resolution</th>
+                <td class="product-info-value">
+                  {{product.resolution.width}} x {{product.resolution.height}}
+                </td>
+              </tr>
+              <tr>
+                <th class="product-info-name">Processor</th>
+                <td class="product-info-value">{{product.processor}}</td>
+              </tr>
+              <tr>
+                <th class="product-info-name">CPU</th>
+                <td class="product-info-value">{{product.cpu}}</td>
+              </tr>
+              <tr>
+                <th class="product-info-name">Processor cache</th>
+                <td class="product-info-value">{{product.processor_cache}}MB</td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+      {% endfor %}
+    <div class="clearfix"></div>
+    </div>
+
+
+    <div class="products-cart container">
+      <h2 class="similar-head">Similar products</h2>
+
+      <div class="cart">
+        <div class="cart-image">
+          <img src="/media/images/hp.webp" alt="macbook">
+        </div>
+
+        <div class="cart-body">
+          <h2>
+            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
+          </h2>
+
+          <div class="cart-info">
+            <div class="cart-price-info">
+              <div class="cart-price">
+                Price: <span>$5320</span> |
+                Count: <span>12</span>
+              </div>
+              <div class="cart-basket">
+                <a href="#">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+            <div class="cart-categories">
+              <span>Categories:</span>
+              <a href="#" class="bg-blue">Electronics</a>
+              <a href="#" class="bg-red">Computers</a>
+              <a href="#" class="bg-orange">Tools</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart">
+        <div class="cart-image">
+          <img src="/media/images/hp.webp" alt="macbook">
+        </div>
+
+        <div class="cart-body">
+          <h2>
+            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
+          </h2>
+
+          <div class="cart-info">
+            <div class="cart-price-info">
+              <div class="cart-price">
+                Price: <span>$5320</span> |
+                Count: <span>12</span>
+              </div>
+              <div class="cart-basket">
+                <a href="#">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+            <div class="cart-categories">
+              <span>Categories:</span>
+              <a href="#" class="bg-blue">Electronics</a>
+              <a href="#" class="bg-red">Computers</a>
+              <a href="#" class="bg-orange">Tools</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart">
+        <div class="cart-image">
+          <img src="/media/images/hp.webp" alt="macbook">
+        </div>
+
+        <div class="cart-body">
+          <h2>
+            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
+          </h2>
+
+          <div class="cart-info">
+            <div class="cart-price-info">
+              <div class="cart-price">
+                Price: <span>$5320</span> |
+                Count: <span>12</span>
+              </div>
+              <div class="cart-basket">
+                <a href="#">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                </a>
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+            <div class="cart-categories">
+              <span>Categories:</span>
+              <a href="#" class="bg-blue">Electronics</a>
+              <a href="#" class="bg-red">Computers</a>
+              <a href="#" class="bg-orange">Tools</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="#">Category 1</a></li>
+          <li><a href="#">Category 2</a></li>
+          <li><a href="#">Category 3</a></li>
+          <li><a href="#">Category 4</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>About Company</h3>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Social Networks</h3>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Telegram</a></li>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="copyright">
+      <span>Esim inch &copy; 2022</span>
+    </div>
+  </footer>
+
+</body>
+</html>
