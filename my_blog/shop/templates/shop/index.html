@@ -57,251 +57,48 @@
     <div class="banner"></div>
   </header>
 
-
   <section>
     <div class="head-section">
       <h1>Shop home page</h1>
     </div>
 
     <div class="container">
-      <div class="cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
 
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
+      {% for product in products %}
+        <div class="cart">
+          <div class="cart-image">
+            <img src="/media/images/{{product.image}}" alt="macbook">
+          </div>
 
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
+          <div class="cart-body">
+            <h2>
+              <a href="#">{{product.name}}</a>
+            </h2>
+
+            <div class="cart-info">
+              <div class="cart-price-info">
+                <div class="cart-price">
+                  Price: <span>${{product.price}}</span> |
+                  Count: <span>{{product.count}}</span>
+                </div>
+                <div class="cart-basket">
+                  <a href="#">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                  </a>
+                </div>
+
+                <div class="clearfix"></div>
               </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
+              <div class="cart-categories">
+                <span>Categories:</span>
+                {% for category in product.categories %}
+                  <a href="#" class="bg-blue">{{category}}</a>
+                {% endfor %}
               </div>
-
-              <div class="clearfix"></div>
-            </div>
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="cart">
-        <div class="cart-image">
-          <img src="/media/images/zenbook.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
-
-              <div class="clearfix"></div>
-            </div>
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
-
-              <div class="clearfix"></div>
-            </div>
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cart">
-        <div class="cart-image">
-          <img src="/media/images/zenbook.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
-
-              <div class="clearfix"></div>
-            </div>
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
-
-              <div class="clearfix"></div>
-            </div>
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cart">
-        <div class="cart-image">
-          <img src="/media/images/zenbook.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
-
-              <div class="clearfix"></div>
-            </div>
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
-
-              <div class="clearfix"></div>
-            </div>
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
 
       <div class="clearfix"></div>
     </div>
