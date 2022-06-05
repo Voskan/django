@@ -15,13 +15,13 @@
   
   <header class="shop_header">
     <div class="shop_logo">
-      <a href="./index.html">
+      <a href="/">
         <img src="/media/images/logo.png" alt="test">
       </a>
     </div>
 
     <div class="shop_search">
-      <form method="GET" action="/">
+      <form method="GET" action="/index.html">
         <input type="search" placeholder="Search..." class="s_input" />
         <input type="submit" value="Search" class="s_btn" />
       </form>
@@ -55,80 +55,15 @@
     <div class="clearfix"></div>
   </header>
 
-  <section class="product">
-    {% for product in products %}
-      <div class="container">
-        <div class="product-image">
-          <img src="/media/images/hp.webp" alt="">
 
-          <div class="cart-price product-price">
-            Price: <span>${{product.price}}</span> |
-            Count: <span>{{product.count}}</span>
-          </div>
-
-          <div class="clearfix"></div>
-
-          <div class="product-actions">
-            <form>
-              <label>
-                Count: <input type="number" name="count" class="product-cnt" />
-              </label>
-              <input type="submit" value="Add Product" class="product-add" />
-            </form>
-          </div>
-        </div>
-
-        <div class="product-info">
-          <h1>{{product.name}}</h1>
-
-          <table>
-            <tbody>
-              <tr>
-                <th class="product-info-name">Availability</th>
-                <td class="product-info-value">{{product.availability}}</td>
-              </tr>
-              <tr>
-                <th class="product-info-name">Brand</th>
-                <td class="product-info-value">{{product.brand}}</td>
-              </tr>
-              <tr>
-                <th class="product-info-name">Screen size</th>
-                <td class="product-info-value">{{product.screen_size}} "</td>
-              </tr>
-              <tr>
-                <th class="product-info-name">Screen Type</th>
-                <td class="product-info-value">{{product.screen_type}}</td>
-              </tr>
-              <tr>
-                <th class="product-info-name">Resolution</th>
-                <td class="product-info-value">
-                  {{product.resolution.width}} x {{product.resolution.height}}
-                </td>
-              </tr>
-              <tr>
-                <th class="product-info-name">Processor</th>
-                <td class="product-info-value">{{product.processor}}</td>
-              </tr>
-              <tr>
-                <th class="product-info-name">CPU</th>
-                <td class="product-info-value">{{product.cpu}}</td>
-              </tr>
-              <tr>
-                <th class="product-info-name">Processor cache</th>
-                <td class="product-info-value">{{product.processor_cache}}MB</td>
-              </tr>
-              </tbody>
-            </table>
-        </div>
-      {% endfor %}
-    <div class="clearfix"></div>
+  <section>
+    <div class="head-section">
+      <h1>News</h1>
     </div>
 
+    <div class="container">
 
-    <div class="products-cart container">
-      <h2 class="similar-head">Similar products</h2>
-
-      <div class="cart">
+      <div class="cart news-cart">
         <div class="cart-image">
           <img src="/media/images/hp.webp" alt="macbook">
         </div>
@@ -138,20 +73,11 @@
             <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
           </h2>
 
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
+          <div class="short-info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
+          </div>
 
-              <div class="clearfix"></div>
-            </div>
+          <div class="cart-info">
             <div class="cart-categories">
               <span>Categories:</span>
               <a href="#" class="bg-blue">Electronics</a>
@@ -162,7 +88,7 @@
         </div>
       </div>
 
-      <div class="cart">
+       <div class="cart news-cart">
         <div class="cart-image">
           <img src="/media/images/hp.webp" alt="macbook">
         </div>
@@ -172,20 +98,11 @@
             <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
           </h2>
 
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
+          <div class="short-info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
+          </div>
 
-              <div class="clearfix"></div>
-            </div>
+          <div class="cart-info">
             <div class="cart-categories">
               <span>Categories:</span>
               <a href="#" class="bg-blue">Electronics</a>
@@ -196,7 +113,8 @@
         </div>
       </div>
 
-      <div class="cart">
+
+       <div class="cart news-cart">
         <div class="cart-image">
           <img src="/media/images/hp.webp" alt="macbook">
         </div>
@@ -206,20 +124,63 @@
             <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
           </h2>
 
-          <div class="cart-info">
-            <div class="cart-price-info">
-              <div class="cart-price">
-                Price: <span>$5320</span> |
-                Count: <span>12</span>
-              </div>
-              <div class="cart-basket">
-                <a href="#">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                </a>
-              </div>
+          <div class="short-info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
+          </div>
 
-              <div class="clearfix"></div>
+          <div class="cart-info">
+            <div class="cart-categories">
+              <span>Categories:</span>
+              <a href="#" class="bg-blue">Electronics</a>
+              <a href="#" class="bg-red">Computers</a>
+              <a href="#" class="bg-orange">Tools</a>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+       <div class="cart news-cart">
+        <div class="cart-image">
+          <img src="/media/images/hp.webp" alt="macbook">
+        </div>
+
+        <div class="cart-body">
+          <h2>
+            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
+          </h2>
+
+          <div class="short-info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
+          </div>
+
+          <div class="cart-info">
+            <div class="cart-categories">
+              <span>Categories:</span>
+              <a href="#" class="bg-blue">Electronics</a>
+              <a href="#" class="bg-red">Computers</a>
+              <a href="#" class="bg-orange">Tools</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+       <div class="cart news-cart">
+        <div class="cart-image">
+          <img src="/media/images/hp.webp" alt="macbook">
+        </div>
+
+        <div class="cart-body">
+          <h2>
+            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
+          </h2>
+
+          <div class="short-info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
+          </div>
+
+          <div class="cart-info">
             <div class="cart-categories">
               <span>Categories:</span>
               <a href="#" class="bg-blue">Electronics</a>
