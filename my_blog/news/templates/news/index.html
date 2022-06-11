@@ -63,133 +63,32 @@
 
     <div class="container">
 
-      <div class="cart news-cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="short-info">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
+      {% for p in news %}
+        <div class="cart news-cart">
+          <div class="cart-image">
+            <img src="/media/images/hp.webp" alt="macbook">
           </div>
 
-          <div class="cart-info">
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
+          <div class="cart-body">
+            <h2>
+              <a href="#">{{p.title}}</a>
+            </h2>
+
+            <div class="short-info">
+              <p>{{p.content}}</p>
+            </div>
+
+            <div class="cart-info">
+              <div class="cart-categories">
+                <span>Categories:</span>
+                <a href="#" class="bg-blue">Electronics</a>
+                <a href="#" class="bg-red">Computers</a>
+                <a href="#" class="bg-orange">Tools</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-       <div class="cart news-cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="short-info">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
-          </div>
-
-          <div class="cart-info">
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-       <div class="cart news-cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="short-info">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
-          </div>
-
-          <div class="cart-info">
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-       <div class="cart news-cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="short-info">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
-          </div>
-
-          <div class="cart-info">
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-       <div class="cart news-cart">
-        <div class="cart-image">
-          <img src="/media/images/hp.webp" alt="macbook">
-        </div>
-
-        <div class="cart-body">
-          <h2>
-            <a href="#">MacBook ipsum dolor sit amet consectetur.</a>
-          </h2>
-
-          <div class="short-info">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi similique dignissimos, culpa adipisci pariatur assumenda...</p>
-          </div>
-
-          <div class="cart-info">
-            <div class="cart-categories">
-              <span>Categories:</span>
-              <a href="#" class="bg-blue">Electronics</a>
-              <a href="#" class="bg-red">Computers</a>
-              <a href="#" class="bg-orange">Tools</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
 
       <div class="clearfix"></div>
     </div>

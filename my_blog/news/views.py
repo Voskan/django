@@ -1,4 +1,9 @@
 from django.shortcuts import render
+from .models import Post
 
 def index(request):
-  return render(request, 'news/index.html')
+  news = Post.objects.all()
+
+  return render(request, 'news/index.html',  {
+    "news": news
+  })

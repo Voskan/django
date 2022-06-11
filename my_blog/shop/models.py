@@ -13,3 +13,4 @@ class Product(models.Model):
   screen_type = models.CharField(max_length=20)
   screen_size = models.SmallIntegerField()
   brand = models.CharField(max_length=20)
+  photo = models.ImageField(upload_to='photos/shop/%Y/%m/%d/')
