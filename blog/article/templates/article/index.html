@@ -12,9 +12,9 @@
   <header class="header">
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
 
       <div class="clearfix"></div>
@@ -25,65 +25,26 @@
     <h1 class="blog-title">My Blog</h1>
 
     <section class="main">
-      <div class="post">
-        <div class="post-left">
-          <img src="/media//images/image.jpeg" alt="">
-        </div>
-        <div class="post-right">
-          <h2><a href="#">Post title</a></h2>
-          <p>Post short description...</p>
-          <div class="post-info">
-            <span>Create date: 12-06-2022</span>
+
+      {% for article in articles %}
+        {% if article.is_published %}
+          <div class="post">
+            <div class="post-left">
+              <img src="/media/{{article.photo}}" alt="">
+            </div>
+            <div class="post-right">
+              <h2><a href="/article/{{article.pk}}">{{article.title}}</a></h2>
+              <p>{{article.short_description}}</p>
+              <div class="post-info">
+                <span>Create date: {{article.created_at}}</span>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
           </div>
-        </div>
+        {% endif %}
+      {% endfor %}
 
-        <div class="clearfix"></div>
-      </div>
-
-      <div class="post">
-        <div class="post-left">
-          <img src="/media/images/image.jpeg" alt="">
-        </div>
-        <div class="post-right">
-          <h2><a href="#">Post title</a></h2>
-          <p>Post short description...</p>
-          <div class="post-info">
-            <span>Create date: 12-06-2022</span>
-          </div>
-        </div>
-
-        <div class="clearfix"></div>
-      </div>
-
-      <div class="post">
-        <div class="post-left">
-          <img src="/media/images/image.jpeg" alt="">
-        </div>
-        <div class="post-right">
-          <h2><a href="#">Post title</a></h2>
-          <p>Post short description...</p>
-          <div class="post-info">
-            <span>Create date: 12-06-2022</span>
-          </div>
-        </div>
-
-        <div class="clearfix"></div>
-      </div>
-
-      <div class="post">
-        <div class="post-left">
-          <img src="/media/images/image.jpeg" alt="">
-        </div>
-        <div class="post-right">
-          <h2><a href="#">Post title</a></h2>
-          <p>Post short description...</p>
-          <div class="post-info">
-            <span>Create date: 12-06-2022</span>
-          </div>
-        </div>
-
-        <div class="clearfix"></div>
-      </div>
     </section>
   </div>
 

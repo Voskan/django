@@ -52,7 +52,7 @@
 }
 
 .post-left {
-  max-width: 150px;
+  width: 150px;
   float: left;
   margin-right: 10px;
 }
@@ -64,6 +64,7 @@
 .post-right {
   float: left;
   font-weight: 14px;
+  width: 620px;
 }
 
 .post-right h2 {
@@ -84,4 +85,27 @@
 
 .clearfix {
   clear: both;
+}
+
+.full-post-image {
+  width: 500px;
+  margin: 10px auto;
+}
+
+.full-post-image img {
+  width: 100%;
+}
+.full-post-contect {
+  margin: 10px 0;
+  padding: 5px;
+}
+.full-post-contect h1 {
+  text-align: center;
+  color: blueviolet;
+  margin: 10px 0;
+}
+
+.full-post-contect p {
+  font-size: 16px;
+  margin: 20px 0;
 }
