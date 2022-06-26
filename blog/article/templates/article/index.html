@@ -4,30 +4,48 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/media/style.css">
-  <title>Blog</title>
+  <title>{{title}}</title>
 </head>
 <body>
 
   <header class="header">
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
+
+      <div class="search">
+        <form method="get" action="/">
+          <input
+            type="text"
+            name="search_input"
+            class="searh-input"
+            placeholder="Input text"
+            value="{{search}}"
+          />
+          <input type="submit" value="Search" class="searh-btn" />
+        </form>
+      </div>
 
       <div class="clearfix"></div>
     </nav>
   </header>
   
   <div class="container">
-    <h1 class="blog-title">My Blog</h1>
+    {% if search %}
+      <h1 class="blog-title">Search - {{search}}</h1>
+    {% else %}
+      <h1 class="blog-title">My Blog</h1>
+    {% endif %}
 
     <section class="main">
 
-      {% for article in articles %}
-        {% if article.is_published %}
+      {% if articles %}
+        {% for article in articles %}
           <div class="post">
             <div class="post-left">
               <img src="/media/{{article.photo}}" alt="">
@@ -36,15 +54,30 @@
               <h2><a href="/article/{{article.pk}}">{{article.title}}</a></h2>
               <p>{{article.short_description}}</p>
               <div class="post-info">
-                <span>Create date: {{article.created_at}}</span>
+                <div class="left-info">
+                  Create date: <strong>{{article.created_at}}</strong>
+                </div>
+
+                <div class="right-info">
+                  <span><i class="fa-solid fa-eye"></i> {{article.views}}</span>
+                  <span><i class="fa-solid fa-thumbs-up"></i> {{article.likes}}</span>
+                  <span><i class="fa-solid fa-thumbs-down"></i> {{article.dis_likes}}</span>
+                  <span class="trash">
+                    <a href="/delete/{{article.pk}}"><i class="fa-solid fa-trash"></i></a>
+                  </span>
+                </div>
               </div>
             </div>
 
             <div class="clearfix"></div>
           </div>
-        {% endif %}
-      {% endfor %}
+        {% endfor %}
 
+      {% else %}
+          <div>
+            <h3>No search results</h3>
+          </div>
+      {% endif %}
     </section>
   </div>
 

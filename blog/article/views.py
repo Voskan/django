@@ -1,33 +1,42 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .models import Article
-import random
 
 def index(req):
-  articles = Article.objects.all()
+  search = req.GET.get('search_input')
+  title = "Blog home page"
+
+  if not search:
+    search = ""
+  else:
+    title = search + " - Blog"
+
+
+  articles = Article.objects.filter(is_published=True, title__contains=search)
+
   return render(req, 'article/index.html', {
-    "articles": articles
+    "articles": articles,
+    "title": title,
+    "search": search
   })
 
 def article(req, id):
   article = Article.objects.get(pk=id)
+  article.views = article.views + 1
+  article.save()
 
   return render(req, 'article/article.html', {
-    "article": article
+    "article": article,
+    "title": article.title
   })
 
+def delete(_, id):
+  article = Article.objects.filter(pk=id)
+  article.delete()
+
+  return HttpResponseRedirect('/')
 
 def contact(req):
-  return render(req, 'static/contact.html')
-
-
-def add_data(req):
-  random_data = str(random.randrange(1, 100))
-
-  Article.objects.create(
-    title="My news title " + random_data,
-    short_description="My news short description text " + random_data,
-    description="My news description full text " + random_data,
-    photo="test.jpeg",
-    is_published=True,
-  )
-  return render(req, 'static/contact.html')
+  return render(req, 'static/contact.html', {
+    "title": "Contact page"
+  })

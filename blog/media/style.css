@@ -35,6 +35,11 @@
   padding: 10px 10px;
 }
 
+.header ul li a.active {
+  background-color: rgb(227, 227, 255);
+  color: var(--main-color);
+}
+
 .blog-title {
   text-align: center;
   font-weight: bold;
@@ -79,8 +84,7 @@
   color: var(--main-color);
 }
 .post-info {
-  margin-top: 10px;
-  font-size: 12px;
+  padding: 20px 0;
 }
 
 .clearfix {
@@ -108,4 +112,98 @@
 .full-post-contect p {
   font-size: 16px;
   margin: 20px 0;
+}
+
+.left-info {
+  float: left;
+  width: 280px;
+  font-size: 16px;
+  color: rgb(40, 40, 40);
+}
+
+.right-info {
+  float: right;
+  font-size: 18px;
+}
+.right-info span {
+  display: inline-block;
+  margin-left: 10px;
+}
+.right-info span i {
+  color: blueviolet;
+}
+.trash a i {
+  color: tomato;
+  transition: all 0.4s;
+}
+.trash a:hover > i {
+  color: rgb(115, 17, 0);
+}
+
+.contact-form {
+  display: block;
+  width: 500px;
+  margin: 10px auto;
+}
+
+.form-input input, .form-text textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--main-color);
+}
+
+.form-text textarea {
+  height: 90px;
+}
+
+.form-btn input {
+  display: block;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: var(--main-color);
+  transition: all 0.4s;
+}
+
+.form-btn input:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.search {
+  float: right;
+  width: 400px;
+  margin-top: 4px;
+}
+.searh-input {
+  display: inline-block;
+  width: 70%;
+  padding: 7px;
+  outline: none;
+  border-radius: 5px 0 0 5px;
+  border: none;
+}
+.searh-btn {
+  display: inline-block;
+  width: 24%;
+  position: relative;
+  left: -2px;
+  padding: 7px;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  color: var(--main-color);
+  font-weight: bold;
+  transition: all 0.4s;
+}
+.searh-btn:hover {
+  cursor: pointer;
+  background-color: rgb(165, 102, 224);
+  color: #fff;
 }
